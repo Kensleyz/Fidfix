@@ -3,8 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="description" content="Fidfix Plumbing and Maintenance Services - 24/7 Emergency Service in Table View, Cape Town">
-  <meta name="keywords" content="plumber, emergency plumbing, Cape Town, Table View, drain cleaning, water heater">
+  
+  <!-- SEO Meta Tags -->
+  <title>Fidfix Plumbing Table View | 24/7 Emergency Plumber Cape Town</title>
+  <meta name="description" content="24/7 emergency plumber in Table View, Cape Town. PIRB certified. Burst pipes, drain cleaning, geyser repair, leak detection. Call 061 150 9475">
+  <meta name="keywords" content="plumber table view, emergency plumber cape town, fidfix plumbing, drain cleaning, geyser repair, burst pipes, plumber near me">
+  <meta name="author" content="Fidfix Plumbing and Maintenance Services">
+  
+  <!-- Location Schema -->
+  <meta name="geo.region" content="ZA-WC">
+  <meta name="geo.placename" content="Table View, Cape Town">
+  <meta name="geo.position" content="-33.82953;18.51674">
   
   <!-- PWA Meta Tags -->
   <meta name="theme-color" content="#0f2027">
@@ -13,11 +22,53 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   
   <!-- Open Graph -->
-  <meta property="og:title" content="Fidfix Plumbing and Maintenance Services">
-  <meta property="og:description" content="24/7 Emergency Service - Table View & Surrounds">
+  <meta property="og:title" content="Fidfix Plumbing - 24/7 Emergency Service Table View">
+  <meta property="og:description" content="Professional plumbing services in Table View & Cape Town. Emergency callouts, drain cleaning, geyser repairs.">
   <meta property="og:type" content="business.business">
+  <meta property="og:url" content="https://fidfix.co.za">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1200">
   
-  <title>Fidfix Plumbing | 24/7 Service Cape Town</title>
+  <!-- Business Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Plumber",
+    "name": "Fidfix Plumbing and Maintenance Services",
+    "image": "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1200",
+    "telephone": "+27611509475",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "11 Byron Rd",
+      "addressLocality": "Table View",
+      "addressRegion": "Western Cape",
+      "postalCode": "7441",
+      "addressCountry": "ZA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -33.82953,
+      "longitude": 18.51674
+    },
+    "url": "https://fidfix.co.za",
+    "openingHours": "Mo-Su 00:00-23:59",
+    "priceRange": "$$",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.7",
+      "reviewCount": "18"
+    },
+    "areaServed": ["Table View", "Bloubergstrand", "Milnerton", "Cape Town"],
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": -33.82953,
+        "longitude": 18.51674
+      },
+      "geoRadius": "25000"
+    }
+  }
+  </script>
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,23 +91,9 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
+      background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
     }
     
-    #root {
-      min-height: 100vh;
-    }
-
-    .loading {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-      color: white;
-      font-size: 24px;
-      font-weight: 700;
-    }
-
     html {
       scroll-behavior: smooth;
     }
@@ -65,733 +102,399 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    ::-webkit-scrollbar {
-      width: 8px;
+    /* Header Image */
+    .header-image {
+      height: 200px;
+      background: url('https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1200') center/cover;
+      position: relative;
     }
 
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
+    .share-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(255,255,255,0.95);
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.2s;
     }
 
-    ::-webkit-scrollbar-thumb {
-      background: #888;
-      border-radius: 4px;
+    .share-btn:active {
+      transform: scale(0.95);
     }
 
-    ::-webkit-scrollbar-thumb:hover {
-      background: #555;
+    /* Main Card */
+    .card {
+      max-width: 600px;
+      margin: -60px auto 0;
+      background: white;
+      border-radius: 24px 24px 0 0;
+      padding: 32px 24px 80px;
+      box-shadow: 0 -4px 32px rgba(0,0,0,0.2);
+      min-height: calc(100vh - 140px);
+    }
+
+    /* Company Header */
+    .company-header {
+      margin-bottom: 32px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #0f2027;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .rating-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .rating-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #FF6B35;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 24px;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .reviews {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .category-badge {
+      background: #e8f5e9;
+      color: #2e7d32;
+      padding: 6px 12px;
+      border-radius: 16px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .tagline {
+      font-size: 14px;
+      color: #FF6B35;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    /* Action Buttons */
+    .action-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: transform 0.2s;
+      text-decoration: none;
+      font-family: inherit;
+    }
+
+    .btn:active {
+      transform: scale(0.95);
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-call {
+      background: #0f2027;
+      color: white;
+      box-shadow: 0 4px 12px rgba(15, 32, 39, 0.3);
+    }
+
+    /* Contact Info */
+    .contact-info {
+      background: #f5f5f5;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .contact-item {
+      margin-bottom: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .contact-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-item i {
+      color: #FF6B35;
+      font-size: 18px;
+      margin-top: 4px;
+      min-width: 18px;
+    }
+
+    .contact-label {
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #0f2027;
+      font-size: 14px;
+    }
+
+    .contact-value {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .contact-value.hours {
+      color: #2e7d32;
+      font-weight: 600;
+    }
+
+    /* Services Grid */
+    .services-section {
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f2027;
+      margin-bottom: 16px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .service-item {
+      background: #fff;
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #0f2027;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    /* About Section */
+    .about-section {
+      margin-bottom: 24px;
+    }
+
+    .about-text {
+      color: #666;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    /* Certifications */
+    .certifications-section {
+      margin-bottom: 24px;
+    }
+
+    .cert-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .cert-badge {
+      background: #e8f5e9;
+      color: #2e7d32;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e0e0e0;
+      text-align: center;
+      color: #999;
+      font-size: 12px;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .card {
+        padding: 24px 20px 60px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .services-grid {
+        gap: 8px;
+      }
+
+      .service-item {
+        font-size: 12px;
+        padding: 10px;
+      }
     }
   </style>
 </head>
 <body>
-  <div id="root">
-    <div class="loading">Loading...</div>
+  <!-- Header Image -->
+  <div class="header-image">
+    <button class="share-btn" onclick="shareCard()">
+      <i class="fas fa-share-alt" style="color: #0f2027; font-size: 18px;"></i>
+    </button>
   </div>
 
-  <!-- React & Babel -->
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-  <!-- Main App -->
-  <script type="text/babel">
-    const { useState, useEffect } = React;
-
-    // Initial company data from Google Maps scrape
-    const initialCompanyData = {
-      name: 'Fidfix Plumbing and Maintenance Services',
-      rating: 4.7,
-      reviews: 18,
-      category: 'Plumber',
-      address: '11 Byron Rd, Table View, Cape Town, 7441',
-      phone: '061 150 9475',
-      whatsapp: '27611509475',
-      hours: 'Open 24 hours',
-      location: '5GC8+5M Bloubergstrand, Cape Town',
-      coordinates: { lat: -33.82953, lng: 18.51674 },
-      services: [
-        'Emergency Plumbing',
-        'Drain Cleaning',
-        'Water Heater Repair',
-        'Leak Detection',
-        'Bathroom Renovations',
-        'Pipe Installation'
-      ],
-      tagline: '24/7 Emergency Service - Table View & Surrounds',
-      aboutText: 'Professional plumbing and maintenance services serving Cape Town. Fast, reliable, and affordable solutions for all your plumbing needs.',
-      paymentMethods: ['Cash', 'EFT', 'Card'],
-      certifications: ['Registered Plumber', 'PIRB Certified']
-    };
-
-    function FidfixCard() {
-      const [isAdmin, setIsAdmin] = useState(false);
-      const [companyData, setCompanyData] = useState(initialCompanyData);
-      const [editMode, setEditMode] = useState(false);
-      const [password, setPassword] = useState('');
-      const [showLogin, setShowLogin] = useState(false);
-      const [editData, setEditData] = useState(companyData);
-
-      useEffect(() => {
-        const path = window.location.pathname;
-        if (path.includes('/admin') || window.location.hash === '#admin') {
-          setShowLogin(true);
-        }
-      }, []);
-
-      const handleLogin = (e) => {
-        e.preventDefault();
-        if (password === 'admin123') {
-          setIsAdmin(true);
-          setShowLogin(false);
-        } else {
-          alert('Invalid password. Demo password: admin123');
-        }
-      };
-
-      const handleSave = () => {
-        setCompanyData(editData);
-        setEditMode(false);
-        localStorage.setItem('fidfixData', JSON.stringify(editData));
-        alert('Changes saved successfully!');
-      };
-
-      useEffect(() => {
-        const saved = localStorage.getItem('fidfixData');
-        if (saved) {
-          try {
-            const parsed = JSON.parse(saved);
-            setCompanyData(parsed);
-            setEditData(parsed);
-          } catch (e) {
-            console.error('Failed to load saved data');
-          }
-        }
-      }, []);
-
-      const shareCard = async () => {
-        const shareData = {
-          title: companyData.name,
-          text: `${companyData.tagline}\n📞 ${companyData.phone}`,
-          url: window.location.href.replace('#admin', '')
-        };
-        
-        try {
-          if (navigator.share) {
-            await navigator.share(shareData);
-          } else {
-            navigator.clipboard.writeText(window.location.href.replace('#admin', ''));
-            alert('Link copied to clipboard!');
-          }
-        } catch (err) {
-          console.log('Share failed:', err);
-        }
-      };
-
-      const openWhatsApp = () => {
-        const message = encodeURIComponent(`Hi, I found you on your digital card. I need plumbing services.`);
-        window.open(`https://wa.me/${companyData.whatsapp}?text=${message}`, '_blank');
-      };
-
-      const openGoogleCalendar = () => {
-        alert('Google Calendar booking coming soon! For now, please WhatsApp us to schedule.');
-        openWhatsApp();
-      };
-
-      const initiatePayment = () => {
-        alert('PayFast payment integration coming soon! Currently accepting EFT and cash.');
-      };
-
-      // Login Screen
-      if (showLogin && !isAdmin) {
-        return (
-          <div style={{
-            minHeight: '100vh',
-            background: 'linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontFamily: "'Space Grotesk', sans-serif",
-            padding: '20px'
-          }}>
-            <div style={{
-              background: 'white',
-              borderRadius: '16px',
-              padding: '40px',
-              maxWidth: '400px',
-              width: '100%',
-              boxShadow: '0 20px 60px rgba(0,0,0,0.3)'
-            }}>
-              <h2 style={{
-                fontSize: '28px',
-                fontWeight: '800',
-                color: '#0f2027',
-                marginBottom: '8px',
-                textAlign: 'center'
-              }}>Admin Login</h2>
-              <p style={{
-                textAlign: 'center',
-                color: '#666',
-                fontSize: '14px',
-                marginBottom: '24px'
-              }}>Demo password: admin123</p>
-              <form onSubmit={handleLogin}>
-                <input
-                  type="password"
-                  placeholder="Enter password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  style={{
-                    width: '100%',
-                    padding: '16px',
-                    fontSize: '16px',
-                    border: '2px solid #e0e0e0',
-                    borderRadius: '8px',
-                    marginBottom: '16px',
-                    fontFamily: 'inherit'
-                  }}
-                />
-                <button
-                  type="submit"
-                  style={{
-                    width: '100%',
-                    padding: '16px',
-                    background: '#FF6B35',
-                    color: 'white',
-                    border: 'none',
-                    borderRadius: '8px',
-                    fontSize: '16px',
-                    fontWeight: '700',
-                    cursor: 'pointer'
-                  }}
-                >
-                  Login
-                </button>
-              </form>
-              <button
-                onClick={() => {
-                  setShowLogin(false);
-                  window.location.hash = '';
-                }}
-                style={{
-                  width: '100%',
-                  padding: '16px',
-                  background: 'transparent',
-                  color: '#666',
-                  border: 'none',
-                  marginTop: '12px',
-                  cursor: 'pointer',
-                  fontSize: '14px'
-                }}
-              >
-                Back to Card
-              </button>
-            </div>
-          </div>
-        );
-      }
-
-      const data = editMode ? editData : companyData;
-
-      return (
-        <div style={{
-          minHeight: '100vh',
-          background: 'linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)',
-          fontFamily: "'Space Grotesk', sans-serif",
-          padding: '0',
-          color: '#333'
-        }}>
-          {/* Header Image */}
-          <div style={{
-            height: '200px',
-            position: 'relative'
-          }}>
-            <div style={{
-              position: 'absolute',
-              top: '16px',
-              right: '16px',
-              display: 'flex',
-              gap: '12px'
-            }}>
-              {isAdmin && (
-                <>
-                  <button
-                    onClick={() => {
-                      if (editMode) {
-                        handleSave();
-                      } else {
-                        setEditMode(true);
-                      }
-                    }}
-                    style={{
-                      background: 'rgba(255,255,255,0.95)',
-                      border: 'none',
-                      borderRadius: '50%',
-                      width: '48px',
-                      height: '48px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      cursor: 'pointer',
-                      boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
-                    }}
-                  >
-                    <i className={editMode ? "fas fa-save" : "fas fa-edit"} style={{ color: editMode ? "#FF6B35" : "#0f2027", fontSize: '18px' }}></i>
-                  </button>
-                  <button
-                    onClick={() => {
-                      setIsAdmin(false);
-                      setEditMode(false);
-                      window.location.hash = '';
-                    }}
-                    style={{
-                      background: 'rgba(255,255,255,0.95)',
-                      border: 'none',
-                      borderRadius: '50%',
-                      width: '48px',
-                      height: '48px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      cursor: 'pointer',
-                      boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
-                    }}
-                  >
-                    <i className="fas fa-sign-out-alt" style={{ color: '#0f2027', fontSize: '18px' }}></i>
-                  </button>
-                </>
-              )}
-              {!isAdmin && (
-                <button
-                  onClick={shareCard}
-                  style={{
-                    background: 'rgba(255,255,255,0.95)',
-                    border: 'none',
-                    borderRadius: '50%',
-                    width: '48px',
-                    height: '48px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    cursor: 'pointer',
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
-                  }}
-                >
-                  <i className="fas fa-share-alt" style={{ color: '#0f2027', fontSize: '18px' }}></i>
-                </button>
-              )}
-            </div>
-          </div>
-
-          {/* Main Card */}
-          <div style={{
-            maxWidth: '600px',
-            margin: '-60px auto 0',
-            background: 'white',
-            borderRadius: '24px 24px 0 0',
-            padding: '32px 24px 120px',
-            boxShadow: '0 -4px 32px rgba(0,0,0,0.2)',
-            minHeight: 'calc(100vh - 140px)'
-          }}>
-            {/* Company Name & Rating */}
-            <div style={{ marginBottom: '32px' }}>
-              {editMode ? (
-                <input
-                  value={editData.name}
-                  onChange={(e) => setEditData({...editData, name: e.target.value})}
-                  style={{
-                    width: '100%',
-                    fontSize: '28px',
-                    fontWeight: '800',
-                    border: '2px solid #e0e0e0',
-                    borderRadius: '8px',
-                    padding: '12px',
-                    marginBottom: '16px',
-                    fontFamily: 'inherit'
-                  }}
-                />
-              ) : (
-                <h1 style={{
-                  fontSize: '28px',
-                  fontWeight: '800',
-                  color: '#0f2027',
-                  marginBottom: '12px',
-                  lineHeight: '1.2'
-                }}>{data.name}</h1>
-              )}
-              
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '12px',
-                marginBottom: '12px',
-                flexWrap: 'wrap'
-              }}>
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  background: '#FF6B35',
-                  color: 'white',
-                  padding: '8px 16px',
-                  borderRadius: '24px',
-                  fontWeight: '700',
-                  fontSize: '16px'
-                }}>
-                  <i className="fas fa-star" style={{ fontSize: '14px' }}></i>
-                  {editMode ? (
-                    <input
-                      type="number"
-                      step="0.1"
-                      value={editData.rating}
-                      onChange={(e) => setEditData({...editData, rating: parseFloat(e.target.value)})}
-                      style={{
-                        width: '50px',
-                        background: 'transparent',
-                        border: 'none',
-                        color: 'white',
-                        fontSize: '16px',
-                        fontWeight: '700'
-                      }}
-                    />
-                  ) : (
-                    <span>{data.rating}</span>
-                  )}
-                </div>
-                <span style={{ color: '#666', fontSize: '14px' }}>
-                  ({editMode ? (
-                    <input
-                      type="number"
-                      value={editData.reviews}
-                      onChange={(e) => setEditData({...editData, reviews: parseInt(e.target.value)})}
-                      style={{ width: '40px', border: '1px solid #ccc', padding: '2px', fontSize: '14px' }}
-                    />
-                  ) : data.reviews} reviews)
-                </span>
-                <span style={{
-                  background: '#e8f5e9',
-                  color: '#2e7d32',
-                  padding: '6px 12px',
-                  borderRadius: '16px',
-                  fontSize: '13px',
-                  fontWeight: '600'
-                }}>{data.category}</span>
-              </div>
-
-              {editMode ? (
-                <input
-                  value={editData.tagline}
-                  onChange={(e) => setEditData({...editData, tagline: e.target.value})}
-                  style={{
-                    width: '100%',
-                    fontSize: '14px',
-                    border: '2px solid #e0e0e0',
-                    borderRadius: '8px',
-                    padding: '8px',
-                    fontFamily: 'inherit'
-                  }}
-                />
-              ) : (
-                <p style={{
-                  fontSize: '14px',
-                  color: '#FF6B35',
-                  fontWeight: '600',
-                  marginTop: '8px'
-                }}>{data.tagline}</p>
-              )}
-            </div>
-
-            {/* Quick Actions */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '12px',
-              marginBottom: '32px'
-            }}>
-              <button
-                onClick={openWhatsApp}
-                style={{
-                  background: '#25D366',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '12px',
-                  padding: '14px',
-                  fontSize: '15px',
-                  fontWeight: '700',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '8px',
-                  boxShadow: '0 4px 12px rgba(37, 211, 102, 0.3)'
-                }}
-              >
-                <i className="fab fa-whatsapp" style={{ fontSize: '18px' }}></i>
-                WhatsApp
-              </button>
-              <button
-                onClick={() => window.location.href = `tel:${data.phone}`}
-                style={{
-                  background: '#0f2027',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '12px',
-                  padding: '14px',
-                  fontSize: '15px',
-                  fontWeight: '700',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '8px',
-                  boxShadow: '0 4px 12px rgba(15, 32, 39, 0.3)'
-                }}
-              >
-                <i className="fas fa-phone" style={{ fontSize: '16px' }}></i>
-                Call Now
-              </button>
-              <button
-                onClick={openGoogleCalendar}
-                style={{
-                  background: '#4285F4',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '12px',
-                  padding: '14px',
-                  fontSize: '15px',
-                  fontWeight: '700',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '8px',
-                  boxShadow: '0 4px 12px rgba(66, 133, 244, 0.3)'
-                }}
-              >
-                <i className="fas fa-calendar" style={{ fontSize: '16px' }}></i>
-                Book
-              </button>
-              <button
-                onClick={initiatePayment}
-                style={{
-                  background: '#FF6B35',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '12px',
-                  padding: '14px',
-                  fontSize: '15px',
-                  fontWeight: '700',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '8px',
-                  boxShadow: '0 4px 12px rgba(255, 107, 53, 0.3)'
-                }}
-              >
-                <i className="fas fa-credit-card" style={{ fontSize: '16px' }}></i>
-                Pay
-              </button>
-            </div>
-
-            {/* Contact Info */}
-            <div style={{
-              background: '#f5f5f5',
-              borderRadius: '16px',
-              padding: '20px',
-              marginBottom: '24px'
-            }}>
-              <div style={{ marginBottom: '16px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                <i className="fas fa-map-marker-alt" style={{ color: '#FF6B35', fontSize: '18px', marginTop: '4px' }}></i>
-                {editMode ? (
-                  <input
-                    value={editData.address}
-                    onChange={(e) => setEditData({...editData, address: e.target.value})}
-                    style={{
-                      flex: 1,
-                      border: '1px solid #ccc',
-                      borderRadius: '4px',
-                      padding: '8px',
-                      fontSize: '14px'
-                    }}
-                  />
-                ) : (
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontWeight: '600', marginBottom: '4px', color: '#0f2027', fontSize: '14px' }}>Address</div>
-                    <div style={{ color: '#666', fontSize: '14px', lineHeight: '1.4' }}>{data.address}</div>
-                  </div>
-                )}
-              </div>
-              <div style={{ marginBottom: '16px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                <i className="fas fa-phone" style={{ color: '#FF6B35', fontSize: '18px', marginTop: '4px' }}></i>
-                {editMode ? (
-                  <input
-                    value={editData.phone}
-                    onChange={(e) => setEditData({...editData, phone: e.target.value})}
-                    style={{
-                      flex: 1,
-                      border: '1px solid #ccc',
-                      borderRadius: '4px',
-                      padding: '8px',
-                      fontSize: '14px'
-                    }}
-                  />
-                ) : (
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontWeight: '600', marginBottom: '4px', color: '#0f2027', fontSize: '14px' }}>Phone</div>
-                    <div style={{ color: '#666', fontSize: '14px' }}>{data.phone}</div>
-                  </div>
-                )}
-              </div>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                <i className="fas fa-clock" style={{ color: '#FF6B35', fontSize: '18px', marginTop: '4px' }}></i>
-                {editMode ? (
-                  <input
-                    value={editData.hours}
-                    onChange={(e) => setEditData({...editData, hours: e.target.value})}
-                    style={{
-                      flex: 1,
-                      border: '1px solid #ccc',
-                      borderRadius: '4px',
-                      padding: '8px',
-                      fontSize: '14px'
-                    }}
-                  />
-                ) : (
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontWeight: '600', marginBottom: '4px', color: '#0f2027', fontSize: '14px' }}>Hours</div>
-                    <div style={{ color: '#2e7d32', fontSize: '14px', fontWeight: '600' }}>{data.hours}</div>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Services */}
-            <div style={{ marginBottom: '24px' }}>
-              <h3 style={{
-                fontSize: '18px',
-                fontWeight: '700',
-                color: '#0f2027',
-                marginBottom: '16px'
-              }}>Services</h3>
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
-                gap: '10px'
-              }}>
-                {data.services.map((service, idx) => (
-                  <div
-                    key={idx}
-                    style={{
-                      background: '#fff',
-                      border: '2px solid #e0e0e0',
-                      borderRadius: '12px',
-                      padding: '12px',
-                      fontSize: '13px',
-                      fontWeight: '600',
-                      color: '#0f2027',
-                      textAlign: 'center',
-                      lineHeight: '1.3'
-                    }}
-                  >
-                    {service}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* About */}
-            <div style={{ marginBottom: '24px' }}>
-              <h3 style={{
-                fontSize: '18px',
-                fontWeight: '700',
-                color: '#0f2027',
-                marginBottom: '12px'
-              }}>About</h3>
-              {editMode ? (
-                <textarea
-                  value={editData.aboutText}
-                  onChange={(e) => setEditData({...editData, aboutText: e.target.value})}
-                  style={{
-                    width: '100%',
-                    minHeight: '80px',
-                    border: '2px solid #e0e0e0',
-                    borderRadius: '8px',
-                    padding: '12px',
-                    fontSize: '14px',
-                    fontFamily: 'inherit',
-                    resize: 'vertical'
-                  }}
-                />
-              ) : (
-                <p style={{ color: '#666', lineHeight: '1.6', fontSize: '14px' }}>
-                  {data.aboutText}
-                </p>
-              )}
-            </div>
-
-            {/* Certifications */}
-            <div style={{ marginBottom: '24px' }}>
-              <h3 style={{
-                fontSize: '18px',
-                fontWeight: '700',
-                color: '#0f2027',
-                marginBottom: '12px'
-              }}>Certifications</h3>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                {data.certifications.map((cert, idx) => (
-                  <div
-                    key={idx}
-                    style={{
-                      background: '#e8f5e9',
-                      color: '#2e7d32',
-                      padding: '8px 14px',
-                      borderRadius: '20px',
-                      fontSize: '13px',
-                      fontWeight: '600'
-                    }}
-                  >
-                    ✓ {cert}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Footer */}
-            <div style={{
-              marginTop: '32px',
-              paddingTop: '24px',
-              borderTop: '1px solid #e0e0e0',
-              textAlign: 'center',
-              color: '#999',
-              fontSize: '12px'
-            }}>
-              Powered by DigiCard • {!isAdmin && (
-                <a
-                  href="#admin"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.location.hash = 'admin';
-                    setShowLogin(true);
-                  }}
-                  style={{
-                    color: '#666',
-                    textDecoration: 'underline',
-                    fontSize: '12px',
-                    cursor: 'pointer'
-                  }}
-                >
-                  Admin
-                </a>
-              )}
-            </div>
-          </div>
+  <!-- Main Card -->
+  <div class="card">
+    <!-- Company Header -->
+    <div class="company-header">
+      <h1>Fidfix Plumbing and Maintenance Services</h1>
+      
+      <div class="rating-container">
+        <div class="rating-badge">
+          <i class="fas fa-star"></i>
+          <span>4.7</span>
         </div>
-      );
-    }
+        <span class="reviews">(18 reviews)</span>
+        <span class="category-badge">Plumber</span>
+      </div>
 
-    // Render the app
-    const root = ReactDOM.createRoot(document.getElementById('root'));
-    root.render(<FidfixCard />);
+      <p class="tagline">24/7 Emergency Service - Table View & Surrounds</p>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <a href="https://wa.me/27611509475?text=Hi%2C%20I%20found%20you%20on%20your%20website.%20I%20need%20plumbing%20services." class="btn btn-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        WhatsApp
+      </a>
+      <a href="tel:0611509475" class="btn btn-call">
+        <i class="fas fa-phone"></i>
+        Call Now
+      </a>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <div>
+          <div class="contact-label">Address</div>
+          <div class="contact-value">11 Byron Rd, Table View, Cape Town, 7441</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <div>
+          <div class="contact-label">Phone</div>
+          <div class="contact-value">061 150 9475</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-clock"></i>
+        <div>
+          <div class="contact-label">Hours</div>
+          <div class="contact-value hours">Open 24 hours</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <div class="services-section">
+      <h3 class="section-title">Services</h3>
+      <div class="services-grid">
+        <div class="service-item">Emergency Plumbing</div>
+        <div class="service-item">Drain Cleaning</div>
+        <div class="service-item">Water Heater Repair</div>
+        <div class="service-item">Leak Detection</div>
+        <div class="service-item">Bathroom Renovations</div>
+        <div class="service-item">Pipe Installation</div>
+      </div>
+    </div>
+
+    <!-- About -->
+    <div class="about-section">
+      <h3 class="section-title">About</h3>
+      <p class="about-text">
+        Professional plumbing and maintenance services serving Cape Town. Fast, reliable, and affordable solutions for all your plumbing needs. Available 24/7 for emergencies.
+      </p>
+    </div>
+
+    <!-- Certifications -->
+    <div class="certifications-section">
+      <h3 class="section-title">Certifications</h3>
+      <div class="cert-badges">
+        <div class="cert-badge">✓ Registered Plumber</div>
+        <div class="cert-badge">✓ PIRB Certified</div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <a href="https://www.facebook.com/fidfixplumbers/" target="_blank" style="color: #666; text-decoration: none; margin: 0 8px;">
+        <i class="fab fa-facebook"></i> Facebook
+      </a>
+      •
+      <a href="https://www.google.com/maps/place/Fidfix+Plumbing+and+Maintenance+Services/@-33.82953,18.51674,15z" target="_blank" style="color: #666; text-decoration: none; margin: 0 8px;">
+        <i class="fas fa-map-marker-alt"></i> Google Maps
+      </a>
+    </div>
+  </div>
+
+  <script>
+    async function shareCard() {
+      const shareData = {
+        title: 'Fidfix Plumbing and Maintenance Services',
+        text: '24/7 Emergency Service - Table View & Surrounds\n📞 061 150 9475',
+        url: window.location.href
+      };
+      
+      try {
+        if (navigator.share) {
+          await navigator.share(shareData);
+        } else {
+          await navigator.clipboard.writeText(window.location.href);
+          alert('Link copied to clipboard!');
+        }
+      } catch (err) {
+        console.log('Share failed:', err);
+      }
+    }
   </script>
 </body>
 </html>
